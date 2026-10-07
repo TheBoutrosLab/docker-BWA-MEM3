@@ -1,51 +1,42 @@
-# docker-tool_name
-Template Repository for the Boutros Lab Dockerfiles based on mambaforge base image.
-
-The base image is pulled from https://hub.docker.com/r/condaforge/mambaforge
-
-# Documentation
-Docker introduction [here](https://uclahs-cds.atlassian.net/wiki/spaces/BOUTROSLAB/pages/3190419/Docker+Introduction)
-
-Dockerfile Best Practices [here](https://uclahs-cds.atlassian.net/wiki/spaces/BOUTROSLAB/pages/3189770/Dockerfile+Best+Practices)
-
-Docker image versioning standard [here](https://uclahs-cds.atlassian.net/wiki/spaces/BOUTROSLAB/pages/3188472/Docker+image+versioning+standardization)
-
+# docker-BWA-MEM3
+Dockerfile for bwa-mem3 aligner.
 
 # Version
 | Tool | Version |
 |------|---------|
-|tool_name| X.X.X|
-|tool_name_2|X.X.X|
+| bwa-mem3 | 0.14.0 |
+| SAMtools | 1.24 |
 
 ---
 
 ## Discussions
 
-- [Issue tracker](<link-to-issues-page>) to report errors and enhancement ideas.
-- Discussions can take place in [docker-<tool> Discussions](<link-to-discussions>)
-- [docker-<tool> pull requests](<link-to-pull-requests>) are also open for discussion
+- [Issue tracker](https://github.com/TheBoutrosLab/docker-BWA-MEM3/issues) to report errors and enhancement ideas.
+- Discussions can take place in [docker-BWA-MEM3 Discussions](https://github.com/TheBoutrosLab/docker-BWA-MEM3/discussions).
+- [docker-BWA-MEM3 pull requests](https://github.com/TheBoutrosLab/docker-BWA-MEM3/pulls) are also open for discussion.
 
 ---
 
 ## Contributors
 
-Please see list of [Contributors](<link-to-contributors-insights>) at GitHub.
+Please see the list of [Contributors](https://github.com/TheBoutrosLab/docker-BWA-MEM3/graphs/contributors) at GitHub.
 
 ---
 
 ## References
 
-1. Tool specific references can be listed here
+1. [bwa-mem3 GitHub repository](https://github.com/fg-labs/bwa-mem3)
+2. [Bioconda package for bwa-mem3](https://anaconda.org/bioconda/bwa-mem3)
 
 ---
 
 ## License
 
-Author: Name1, Name2
+Author: Yash Patel
 
-[docker repo name] is licensed under the GNU General Public License version 2. See the file LICENSE for the terms of the GNU GPL license.
+`docker-BWA-MEM3` is licensed under the GNU General Public License version 2. See the file LICENSE for the terms of the GNU GPL license.
 
-<one line to give the program's name and a brief idea of what it does.>
+`docker-BWA-MEM3` provides a Dockerfile for bwa-mem3.
 
 Copyright (C) 2026 Sanford Burnham Prebys Medical Discovery Institute ("Boutros Lab")
 
