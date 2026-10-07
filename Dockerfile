@@ -1,22 +1,19 @@
 ARG MINIFORGE_VERSION=26.1.1-2
-ARG UBUNTU_VERSION=24.04
-ARG CONDA_ENV_PATH=/opt/conda/envs/tool_name
+ARG SAMTOOLS_VERSION=1.24
+ARG CONDA_ENV_PATH=/opt/conda/envs/bwa-mem3
 
 FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 
 ARG CONDA_ENV_PATH
-
-# Use conda to install tools and dependencies into the configured environment path
-ARG TOOL_VERSION=X.X.X
+ARG BWA_MEM3_VERSION=0.14.0
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
     -c bioconda \
     -c conda-forge \
-    tool_name==${TOOL_VERSION} && \
+    bwa-mem3==${BWA_MEM3_VERSION} && \
     mamba clean -afy
 
-# Deploy the target tools into a base image
-FROM ubuntu:${UBUNTU_VERSION} AS final
+FROM ghcr.io/theboutroslab/samtools:${SAMTOOLS_VERSION} AS final
 
 ARG CONDA_ENV_PATH
 
@@ -25,12 +22,9 @@ COPY --from=builder ${CONDA_ENV_PATH} ${CONDA_ENV_PATH}
 ENV CONDA_ENV_PATH="${CONDA_ENV_PATH}" \
     PATH="${CONDA_ENV_PATH}/bin:${PATH}"
 
-# Add a new user/group called bldocker
-RUN groupadd -g 500001 bldocker && \
-    useradd -r -u 500001 -g bldocker bldocker
-
 # Change the default user to bldocker from root
 USER bldocker
 
-LABEL   maintainer="Your Name <YourName@sbpdiscovery.org>" \
-        org.opencontainers.image.source=https://github.com/TheBoutrosLab/<REPO>
+LABEL maintainer="Yash Patel <ypatel@sbpdiscovery.org>" \
+      org.opencontainers.image.source=https://github.com/TheBoutrosLab/docker-BWA-MEM3 \
+      org.opencontainers.image.description="Dockerfile for bwa-mem3"
