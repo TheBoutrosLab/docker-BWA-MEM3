@@ -5,7 +5,7 @@ ARG CONDA_ENV_PATH=/opt/conda/envs/bwa-mem3
 FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 
 ARG CONDA_ENV_PATH
-ARG BWA_MEM3_VERSION=0.14.1
+ARG BWA_MEM3_VERSION=0.15.0
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
     -c bioconda \
