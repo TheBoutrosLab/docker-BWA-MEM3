@@ -8,6 +8,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ## [Unreleased]
 
 
+## [0.15.0_samtools-1.24] - 2026-10-15
+
+### Changed
+- BWA-MEM3 `v0.15.0`
+
+
 ## [0.14.1_samtools-1.24] - 2026-10-13
 
 ### Changed
