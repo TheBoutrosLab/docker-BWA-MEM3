@@ -4,7 +4,7 @@ Dockerfile for bwa-mem3 aligner.
 # Version
 | Tool | Version |
 |------|---------|
-| bwa-mem3 | 0.15.0 |
+| bwa-mem3 | 0.15.1 |
 | SAMtools | 1.24 |
 
 ---
